@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "329f785d-e0f8-435b-be84-d17704e1007d",
+		"name": "TestesRest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19757703"
+	},
+	"item": [
+		{
+			"name": "GetComments",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "qJ2jzdES.qJvMUWq235ekVGT7FHMsJyZyxPv9zQvs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/Comment/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"Comment",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetReviews",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "PostReviews",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "EXrjwQ9d.4wgTywSaJXSTm5yD76SDprUnEZKzI5Sc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"order_id\": 6,\r\n    \"user_id\": 1,\r\n    \"timestamp\": \"2024-02-10T07:26:15.207489Z\",\r\n    \"parking_order_available\": true,\r\n    \"comment_review\": \"3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/Review/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"Review",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostComments",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "EXrjwQ9d.4wgTywSaJXSTm5yD76SDprUnEZKzI5Sc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"review\": \"http://localhost:8000/api/Review/2/\",\r\n    \"timestamp\": \"2024-02-10T07:22:11.864770Z\",\r\n    \"comment\": \"feewfwefwe\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/Comment/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"Comment",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
