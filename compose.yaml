@@ -24,5 +24,19 @@ services:
       - "8000:8000"
     depends_on:
       - db_review
+
+  broker:
+    build:
+      context: ./broker/
+      dockerfile: Dockerfile
+    container_name: Broker
+    command: sh -c "cd broker/broker && python3 manage.py migrate --noinput && python3 manage.py collectstatic --noinput && python manage.py runserver 0.0.0.0:8002"
+    volumes:
+      - .:/app
+    ports:
+      - "8002:8002"
+    depends_on:
+      - review
+
 volumes:
   data:
