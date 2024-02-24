@@ -12,6 +12,6 @@ class Review(models.Model):
         return str(self.order_id)
     
 class Comment(models.Model):
-    review = models.ForeignKey(Review, on_delete=models.CASCADE)
+    review = models.ForeignKey(Review, on_delete=models.CASCADE, unique=True)
     timestamp = models.DateTimeField(auto_now_add=True)
     comment = models.TextField()    
