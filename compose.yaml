@@ -1,5 +1,6 @@
 version: '3'
 services:
+  
   db_review:
     image: postgres:14-alpine
     container_name: db
@@ -59,8 +60,11 @@ services:
       context: ./servicos/autenticacao/
       dockerfile: Dockerfile
     container_name: MicroServicoAutenticacao
+    command: sh -c "cd servicos/autenticacao/MicroServicoAutenticacao && npm install && npm run start"
     ports:
       - "3000:3000"
+    volumes:
+      - .:/app
     depends_on:
       - autenticacao_postgres_db
       - autenticacao_redis_db
