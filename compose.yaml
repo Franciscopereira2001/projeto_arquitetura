@@ -1,6 +1,6 @@
 version: '3'
 services:
-  
+
   db_review:
     image: postgres:14-alpine
     container_name: db
@@ -41,19 +41,25 @@ services:
 
   autenticacao_redis_db:
     image: redis:latest
+    container_name: MicroServicoAutenticacao_Redis
     ports:
       - "6379:6379"
     environment:
       REDIS_PASSWORD: admin
+    depends_on:
+      - review
 
   autenticacao_postgres_db:
     image: postgres:latest
+    container_name: MicroServicoAutenticacao_Postgres
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: admin
       POSTGRES_DB: postgres
     ports:
       - "5439:5439"
+    depends_on:
+      - review
   
   autenticacao_nodejs_db:
     build:
