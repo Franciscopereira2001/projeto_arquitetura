@@ -1,15 +1,15 @@
 import authorizationService from "../modules/authorization-module.js";
-const isAuthorization = (req, res, next) => {
+const isAuthorization = async (req, res, next) => {
    try {
-    const { token } = req.body    
-    const hasPermission =  authorizationService(token)
+    const { token, permission } = req.body 
+    const hasPermission =  await authorizationService(token, permission)
     if (hasPermission) {
         res.status(200).send();
     } else {
-        return false
+        res.status(403).send('Unauthorized')
     }
    } catch (error) {
-        res.status(403).send('Unauthorized')
+        res.status(500).send('Internal server error')
    }
     
 };
