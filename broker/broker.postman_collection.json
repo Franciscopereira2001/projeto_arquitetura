@@ -1,0 +1,250 @@
+{
+	"info": {
+		"_postman_id": "3e131242-d117-4d44-87df-d07ea24c300e",
+		"name": "broker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19757703"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"rodrigo@ipca.pt\",\n    \"password\": \"ipca\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8002/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8002",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzA5MDQxODg2LCJleHAiOjE3MDkwNDU0ODZ9.xrhufSXx20gezRob77FUG6onq_0mbOpqGUkTQ82ONjU\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8002/api/auth/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8002",
+					"path": [
+						"api",
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "is-authentication",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzA5MDQxNjg5LCJleHAiOjE3MDkwNDUyODl9.EmmD-3DGjBKea2QZbI9LmaqJrxz7j5em53kVlLUXGyY\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8002/api/auth/is-authentication",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8002",
+					"path": [
+						"api",
+						"auth",
+						"is-authentication"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "is-authoritzation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzA4Njk4MzU0LCJleHAiOjE3MDg3MDE5NTR9.l7JRCA9DNtNSFYgl2C29uLRY0BZmOz58uv4q3uydHzU\",\n    \"perimission\": \"user\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8002/api/auth/is-authorization",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8002",
+					"path": [
+						"api",
+						"auth",
+						"is-authorization"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetComments",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "qJ2jzdES.qJvMUWq235ekVGT7FHMsJyZyxPv9zQvs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8002/api/review/comments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8002",
+					"path": [
+						"api",
+						"review",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetReviews",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8002/api/review/review",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8002",
+					"path": [
+						"api",
+						"review",
+						"review"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostReviews",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "EXrjwQ9d.4wgTywSaJXSTm5yD76SDprUnEZKzI5Sc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"order_id\": 6,\r\n    \"user_id\": 1,\r\n    \"timestamp\": \"2024-02-10T07:26:15.207489Z\",\r\n    \"parking_order_available\": true,\r\n    \"comment_review\": \"3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8002/api/review/review",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8002",
+					"path": [
+						"api",
+						"review",
+						"review"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostComments",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "EXrjwQ9d.4wgTywSaJXSTm5yD76SDprUnEZKzI5Sc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"review\": \"http://localhost:8000/api/Review/2/\",\r\n    \"timestamp\": \"2024-02-10T07:22:11.864770Z\",\r\n    \"comment\": \"feewfwefwe\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8002/api/review/comments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8002",
+					"path": [
+						"api",
+						"review",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
