@@ -22,5 +22,11 @@ from broker_app.views import *
 
 
 urlpatterns = [
-    path('api/', auth_login),
+    path('api/auth/login', auth_login),
+    path('api/auth/logout', auth_logout),
+    path('api/auth/is-authentication', auth_is_authentication),
+    path('api/auth/is-authorization', auth_is_authorization),
+    
+    path('api/review/comments', review_comments),
+    path('api/review/review', review_reviews)
 ]
