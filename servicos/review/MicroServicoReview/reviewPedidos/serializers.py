@@ -14,4 +14,4 @@ class CommentSerializer(serializers.HyperlinkedModelSerializer):
 class UtilizadorSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Utilizador
-        fields = ['email', 'password', 'primeiro_nome', 'ultimo_nome', 'imagem']
+        fields = ['id' ,'email', 'password', 'primeiro_nome', 'ultimo_nome', 'imagem']

@@ -18,7 +18,7 @@ class Comment(models.Model):
     
     
 class Utilizador(models.Model):
-    email = models.EmailField(primary_key=True)
+    email = models.EmailField(unique=True)
     password = models.TextField()
     primeiro_nome = models.TextField()
     ultimo_nome = models.TextField()

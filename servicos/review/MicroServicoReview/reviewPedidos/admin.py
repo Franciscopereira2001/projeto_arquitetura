@@ -15,5 +15,5 @@ class CommentAdmin(admin.ModelAdmin):
 
 @admin.register(Utilizador)
 class UtilizadorAdmin(admin.ModelAdmin):
-    list_display = ('email', 'password', 'primeiro_nome', 'ultimo_nome')
-    search_fields = ('email', 'password', 'primeiro_nome', 'ultimo_nome')
+    list_display = ('id', 'email', 'password', 'primeiro_nome', 'ultimo_nome')
+    search_fields = ('id', 'email', 'password', 'primeiro_nome', 'ultimo_nome')
