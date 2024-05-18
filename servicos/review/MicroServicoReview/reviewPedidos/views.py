@@ -14,3 +14,8 @@ class CommentViewSet(viewsets.ModelViewSet):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
     permission_classes = [AllowAny]    
+    
+class UtilizadorViewSet(viewsets.ModelViewSet):
+    queryset = Utilizador.objects.all()
+    serializer_class = UtilizadorSerializer
+    permission_classes = [AllowAny]   

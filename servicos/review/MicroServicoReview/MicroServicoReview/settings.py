@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-(ytn(z735!&0)@=k%*#5t#(cd4(o*8hk0vy+@0))$2fsi4%%uw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -78,18 +78,18 @@ WSGI_APPLICATION = 'MicroServicoReview.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
+    #'default': {
+    #    'ENGINE': 'django.db.backends.postgresql',
+    #    'NAME': 'microservicoreview',#config('MYSQL_DATABASE', 'microservico_review_db'),
+    #    'USER': 'django',#config('MYSQL_USER','mysql'),
+    #    'PASSWORD': 'root',#config('MYSQL_PASSWORD','root'),
+    #    'HOST': 'db', #config('DB_HOST', 'db'),  # Use 'db' as default from .env
+    #    'PORT': '5432'#config('DB_PORT', '8001'),  # Use '3306' as default from .env
+    #},
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'microservicoreview',#config('MYSQL_DATABASE', 'microservico_review_db'),
-        'USER': 'django',#config('MYSQL_USER','mysql'),
-        'PASSWORD': 'root',#config('MYSQL_PASSWORD','root'),
-        'HOST': 'db', #config('DB_HOST', 'db'),  # Use 'db' as default from .env
-        'PORT': '5432'#config('DB_PORT', '8001'),  # Use '3306' as default from .env
-    },
-    #'local': {
-    #    'ENGINE': 'django.db.backends.sqlite3',
-    #    'NAME': BASE_DIR / 'db.sqlite3',
-    #}
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 
@@ -138,7 +138,6 @@ REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework_api_key.permissions.HasAPIKey',
     ]
 }
 

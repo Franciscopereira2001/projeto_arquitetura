@@ -21,6 +21,7 @@ from reviewPedidos.views import *
 router = routers.DefaultRouter()
 router.register(r'Review', ReviewViewSet)
 router.register(r'Comment', CommentViewSet)
+router.register(r'Utilizadores', UtilizadorViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

@@ -15,3 +15,11 @@ class Comment(models.Model):
     review = models.ForeignKey(Review, on_delete=models.CASCADE, unique=True)
     timestamp = models.DateTimeField(auto_now_add=True)
     comment = models.TextField()    
+    
+    
+class Utilizador(models.Model):
+    email = models.EmailField(primary_key=True)
+    password = models.TextField()
+    primeiro_nome = models.TextField()
+    ultimo_nome = models.TextField()
+    imagem = models.BinaryField(null=True)
